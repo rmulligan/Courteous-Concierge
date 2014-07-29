@@ -3,6 +3,10 @@ Courteous-Concierge
 
 Service with a smile.
 
+* Clone Repo
+
+        git clone git@github.com:rmulligan/Courteous-Concierge.git
+
 * Bundle:
 
         bundle install
