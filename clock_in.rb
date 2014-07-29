@@ -21,11 +21,16 @@ while true
     puts "\n\n"
     puts "Enter Bag Size (S,M,L):".green
     bag_size = gets.chomp.upcase
+    labels      = {'S' => 'small', 'M' => 'medium', 'L' => 'large'}
 
     if ['S','M','L'].include? bag_size
       bag = Bag.new(bag_size)
       claim_number = @concierge.check_bag(bag)
-      puts "Your Claim Number is".yellow + " #{claim_number}.\n\n".red
+      if claim_number.nil?
+        puts "Sorry, there are no more #{labels[bag_size]} lockers available.\n\n".red
+      else
+        puts "Your Claim Number is".yellow + " #{claim_number}.\n\n".red
+      end
     else
       puts "That is not a size.\n\n".red
     end

@@ -65,11 +65,11 @@ describe Concierge do
       expect(@concierge.lockers.length).to eq(2999)
     end
 
-    it "should return false if all lockers are full" do
+    it "should return nil if all lockers are full" do
       1000.times do
         @concierge.check_bag(@bag)
       end
-      expect(@concierge.check_bag(@bag)).to eq(false)
+      expect(@concierge.check_bag(@bag)).to eq(nil)
     end
 
     it "should fill up" do

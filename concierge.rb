@@ -11,7 +11,7 @@ class Concierge
   end
 
   def check_bag bag
-    claim_number = @lockers.reject{ |_k,locker| locker.capacity != bag.size }.first.tap{|l| return false if l.nil?}[0]
+    claim_number = @lockers.reject{ |_k,locker| locker.capacity != bag.size }.first.tap{|l| return nil if l.nil?}[0]
 
     @checked_bags[claim_number] = @lockers.delete(claim_number)
     claim_number
